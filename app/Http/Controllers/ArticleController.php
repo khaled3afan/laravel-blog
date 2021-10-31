@@ -14,6 +14,12 @@ class ArticleController extends Controller
      */
     public function index()
     {
+        $articles = Article::paginate(10);
+        return view('blog.index')
+            ->with([
+            'articles' =>$articles
+        ]);
+        // dd($articles);
         return Article::all();
     }
 
