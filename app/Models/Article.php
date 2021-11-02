@@ -10,6 +10,14 @@ class Article extends Model
 {
     use SoftDeletes;
     use HasFactory;
-    protected $guarded = [];
+    // protected $guarded = [];
+    protected $fillable = [
+        'title',
+        'content',
+        'created_at',
+        'image_url',
+        'votes',
+        'category_id'
+    ];
     protected $table = 'articles';
 }

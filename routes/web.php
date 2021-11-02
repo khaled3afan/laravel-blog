@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Article;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->prefix('admin/')->group(function () {
-
     Route::resource('articles', ArticleController::class);
 
 });
+
+Route::get('/blog', [ArticleController::class, 'index_blog'])->name('blog.index');
+Route::get('/blog/article/{article}', [ArticleController::class, 'show_blog'])->name('blog.article.show');

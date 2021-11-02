@@ -18,6 +18,7 @@ class CreateArticlesTable extends Migration
             $table->string('title')->required();
             $table->string('slug')->nullable();
             $table->text('content')->required();
+            $table->string('image_url')->nullable();
             $table->integer('votes');
             $table->foreignId('category_id')->nullable();
             $table->timestamps();

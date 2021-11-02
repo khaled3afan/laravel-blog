@@ -21,6 +21,7 @@ class ArticleFactory extends Factory
             'title'     => $title,
             'content'   => $this->faker->text(),
             'slug'      => $slug,
+            'image_url'     => $this->faker->imageUrl(640,480, 'technics'),
             'votes'     => $this->faker->randomNumber(null, true),
         ];
     }

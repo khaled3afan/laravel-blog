@@ -1,5 +1,8 @@
 @extends('blog.layouts.blog-layout')
 
+@section('sidebar')
+@include('blog.layouts.sidebar')
+@endsection
 @section('content')
 
 <div class="main-wrapper">
@@ -9,7 +12,7 @@
             <h2 class="heading">DevBlog - A Blog Template Made For Developers</h2>
             <div class="intro">Welcome to my blog. Subscribe and get my latest blog post in your inbox.</div>
             <div class="single-form-max-width pt-3 mx-auto">
-                <form class="signup-form row g-2 g-lg-2 align-items-center">
+                <form  class="signup-form row g-2 g-lg-2 align-items-center">
                     <div class="col-12 col-md-9">
                         <label class="sr-only" for="semail">Your email</label>
                         <input type="email" id="semail" name="semail1" class="form-control me-md-1 semail"
@@ -33,7 +36,7 @@
             <div class="item mb-5">
                 <div class="row g-3 g-xl-0">
                     <div class="col-2 col-xl-3">
-                        <img class="img-fluid post-thumb " src="{{ asset('images/blog/blog-post-thumb-1.jpg') }}"
+                        <img class="img-fluid post-thumb " src="{{ $article->image_url }}"
                             alt="image">
                     </div>
                     <div class="col">
@@ -44,7 +47,7 @@
                         <div class="intro">
                             {{ $article->content }}
                         </div>
-                        <a class="text-link" href="blog-post.html">Read more &rarr;</a>
+                        <a class="text-link" href="{{ route('blog.article.show', $article->id) }}">Read more &rarr;</a>
                     </div>
                     <!--//col-->
                 </div>
