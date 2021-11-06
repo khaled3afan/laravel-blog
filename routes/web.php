@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Article;
@@ -20,10 +21,12 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return redirect(route('admin.articles.index'));
     return view('dashboard');
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->prefix('admin/')->group(function () {
+    Route::get('/', [AdminController::class , 'index']);
     Route::resource('articles', ArticleController::class);
 
 });

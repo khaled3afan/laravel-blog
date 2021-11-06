@@ -14,10 +14,21 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::paginate(10);
-        return view('blog.index')
+        $articles = Article::orderBy('id', 'desc')->paginate(10);
+        return view('admin.articles.index')
             ->with([
             'articles' =>$articles
+        ]);
+        // dd($articles);
+        return Article::all();
+    }
+
+    public function index_blog()
+    {
+        $articles = Article::paginate(10);
+        return view('blog.index')
+        ->with([
+            'articles' => $articles
         ]);
         // dd($articles);
         return Article::all();
@@ -41,7 +52,10 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $article = $request->all();
+        $article['votes'] =3;
+        Article::create($article);
+        dd($article);
     }
 
     /**
@@ -53,6 +67,11 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         return view('blog.show',['article' => $article]);
+    }
+
+    public function show_blog(Article $article)
+    {
+        return view('blog.show', ['article' => $article]);
     }
 
     /**
