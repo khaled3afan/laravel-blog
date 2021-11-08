@@ -31,7 +31,7 @@
 
                         <div class="form-floating">
                             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px" name="content"></textarea>
-                            <label for="floatingTextarea">Content</label>
+                            {{-- <label for="floatingTextarea">Content</label> --}}
                         </div>
 {{--
                         <div class="col-md-3">

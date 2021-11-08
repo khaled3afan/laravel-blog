@@ -1,6 +1,7 @@
 @extends('blog.layouts.blog-layout')
 @section('styles')
     <link rel="stylesheet" href="{{ asset('plugins/highlight/styles/vs2015.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/article.css') }}">
 @endsection
 @section('sidebar')
 @include('blog.layouts.sidebar')

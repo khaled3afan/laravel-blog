@@ -55,6 +55,7 @@ class ArticleController extends Controller
     {
         $article = $request->all();
         $article['votes'] =3;
+        dd($article);
         Article::create($article);
         return back();
     }
