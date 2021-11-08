@@ -8,11 +8,11 @@
         <x-admin.form-modal title="Creat New Article" />
     </x-slot>
 
-    {{-- <x-admin.table :collection="$articles" :columns="[
+    <x-admin.table :collection="$articles" :columns="[
         'title',
         'content',
         'created_at'
-    ]" /> --}}
+    ]" />
 
     {{-- <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="flex flex-col">

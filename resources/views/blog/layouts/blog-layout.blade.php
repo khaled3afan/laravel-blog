@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
     <!-- FontAwesome JS-->
-    {{-- <script defer src="{{ asset('js/all.min.js') }}"></script> --}}
+    <script defer src="{{ asset('js/all.min.js') }}"></script>
 
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="{{ asset('css/theme-1.css') }}">
@@ -43,6 +43,7 @@
             text-align: right;
         }
     </style>
+    @yield('styles')
 </head>
 <body dir="rtl">
     @yield('sidebar')

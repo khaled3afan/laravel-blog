@@ -1,5 +1,7 @@
 @extends('blog.layouts.blog-layout')
-
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('plugins/highlight/styles/vs2015.css') }}">
+@endsection
 @section('sidebar')
 @include('blog.layouts.sidebar')
 @endsection
@@ -41,50 +43,47 @@
                         elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
                         consequat vitae, eleifend ac, enim. </p>
                     <pre>
-                      <code>
-                        function $initHighlight(block, cls) {
-                        try {
-                            if (cls.search(/\bno\-highlight\b/) != -1)
-                            return process(block, true, 0x0F) +
-                                    ` class="${cls}"`;
-                        } catch (e) {
-                            /* handle exception */
-                        }
-                        for (var i = 0 / 2; i < classes.length; i++) {
-                            if (checkCondition(classes[i]) === undefined)
-                            console.log('undefined');
-                        }
-                        }
+                      <code>function $initHighlight(block, cls) {
+try {
+    if (cls.search(/\bno\-highlight\b/) != -1)
+    return process(block, true, 0x0F) +
+            ` class="${cls}"`;
+} catch (e) {
+    /* handle exception */
+}
+for (var i = 0 / 2; i < classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined)
+    console.log('undefined');
+}
+}
 
-                        &lt;?php
+&lt;?php
 
-                        namespace Database\Seeders;
+namespace Database\Seeders;
 
-                        use Illuminate\Database\Seeder;
+use Illuminate\Database\Seeder;
 
-                        class DatabaseSeeder extends Seeder
-                        {
-                            /**
-                            * Seed the application's database.
-                            *
-                            * @return void
-                            */
-                            public function run()
-                            {
-                                \App\Models\User::factory(10)->create();
-                                $this->call(LaratrustSeeder::class);
+class DatabaseSeeder extends Seeder
+{
+    /**
+    * Seed the application's database.
+    *
+    * @return void
+    */
+    public function run()
+    {
+        \App\Models\User::factory(10)->create();
+        $this->call(LaratrustSeeder::class);
 
-                            }
-                        }
+    }
+}
 
-                        export  $initHighlight;
+export  $initHighlight;
 
-                        &lt;blockquote&nbsp;class=&quot;blockquote&nbsp;m-lg-5&nbsp;py-3&nbsp;&nbsp;&nbsp;ps-4&nbsp;px-lg-5&quot;&gt;
-                        &lt;p&nbsp;class=&quot;mb-2&quot;&gt;You&nbsp;might&nbsp;not&nbsp;think&nbsp;that&nbsp;programmers&nbsp;are&nbsp;artists,&nbsp;but&nbsp;programming&nbsp;is&nbsp;an&nbsp;extremely&nbsp;creative&nbsp;profession.&nbsp;It's&nbsp;logic-based&nbsp;creativity.&lt;/p&gt;
-                        &lt;footer&nbsp;class=&quot;blockquote-footer&nbsp;mt-0&quot;&gt;John&nbsp;Romero&lt;/footer&gt;
-                        &lt;/blockquote&gt;
-
-                        </code>
+&lt;blockquote&nbsp;class=&quot;blockquote&nbsp;m-lg-5&nbsp;py-3&nbsp;&nbsp;&nbsp;ps-4&nbsp;px-lg-5&quot;&gt;
+&lt;p&nbsp;class=&quot;mb-2&quot;&gt;You&nbsp;might&nbsp;not&nbsp;think&nbsp;that&nbsp;programmers&nbsp;are&nbsp;artists,&nbsp;but&nbsp;programming&nbsp;is&nbsp;an&nbsp;extremely&nbsp;creative&nbsp;profession.&nbsp;It's&nbsp;logic-based&nbsp;creativity.&lt;/p&gt;
+&lt;footer&nbsp;class=&quot;blockquote-footer&nbsp;mt-0&quot;&gt;John&nbsp;Romero&lt;/footer&gt;
+&lt;/blockquote&gt;</code>
                         </pre>
                     <h3 class="mt-5 mb-3">Typography</h3>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
@@ -224,7 +223,7 @@
                     adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </p>
                 <figure class="promo-figure">
                     <a href="https://made4dev.com" target="_blank"><img class="img-fluid"
-                            src="assets/images/promo-banner.jpg" alt="image"></a>
+                            src="{{ asset('assets/images/promo-banner.jpg') }}" alt="image"></a>
                 </figure>
             </div>
             <!--//container-->
@@ -244,15 +243,17 @@
 @endsection
 
 
+@push('scripts')
+        <!-- Javascript -->
+        <script src="{{ asset('plugins/popper.min.js') }}"></script>
+        <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+
+        <!-- Page Specific JS -->
+        <script src="{{ asset('plugins/highlight/highlight.pack.js') }}"></script>
+
+        <!-- Custom JS -->
+        <script src="{{ asset('js/blog.js') }}"></script>
+@endpush
 
 
-    <!-- Javascript -->
-    <script src="assets/plugins/popper.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Page Specific JS -->
-    <script src="assets/plugins/highlight/highlight.pack.js"></script>
-
-    <!-- Custom JS -->
-    <script src="assets/js/blog.js"></script>
 
