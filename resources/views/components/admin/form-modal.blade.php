@@ -62,5 +62,8 @@
         $('.submit-form').click(function(){
             $('#form').submit();
         })
+        const easyMDE = new EasyMDE();
+easyMDE.codemirror.setOption('direction', 'rtl');
+
     });
 </script>
